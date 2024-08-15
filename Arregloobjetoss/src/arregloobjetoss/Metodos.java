@@ -54,20 +54,50 @@ public class Metodos {
     //se crea este metodo, para poder ingresar a la matriz y hacer lo deseado
 
     public void modificarHabitacion() {
-        Habitaciones h = new Habitaciones();
-        int num;
-        int pisoHotel;
-        String nuevoEstado;
+     
+        
+
+        int x;
+
+        int nuevoNumero;
+
         String nuevoTipo;
+
         int nuevoPrecio;
-        pisoHotel = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese el número de habitacion que desea modificar"));
-        num = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese el número de habitacion que desea modificar"));
-        nuevoEstado = JOptionPane.showInputDialog(null, "Ingrese el nuevo estado de habitación");
-        nuevoTipo = JOptionPane.showInputDialog(null, "Ingrese el nuevo tipo de habitacion");
-        nuevoPrecio = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese el nuevo valor por noche"));
-        hotel[(pisoHotel - 1)][(num - 1)] = new Habitaciones(nuevoEstado, h.getNumero(), nuevoTipo, nuevoPrecio);
-        JOptionPane.showMessageDialog(null, "La información a sido modificada");
+
+        String nuevoEstado;
+
+        x = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese el numero de habitacion que desea editar"));
+
+        for (int y = 0; y < hotel.length; y++) {
+
+            if ((x - 1) == y) {
+
+                nuevoNumero = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese el nuevo numero de habitacion"));
+
+                nuevoTipo = (JOptionPane.showInputDialog(null, "Ingrese el nuevo tipo de habitacion"));
+
+                nuevoPrecio = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese el nuevo precio de la habitacion"));
+
+                nuevoEstado = (JOptionPane.showInputDialog(null, "Ingrese el nuevo estado de la habitacion"));
+
+                hotel[x][y] = new Habitaciones(nuevoEstado, nuevoNumero, nuevoTipo, nuevoPrecio);
+
+                /*} else {
+
+                JOptionPane.showMessageDialog(null, "Ingrese un número de estudiante válido ");
+
+            }*/
+ 
+                JOptionPane.showMessageDialog(null, "La habitacion ha sido modificada con exito");
+
+            }
+
+        }
+
     }
+
+ 
     //mostramps el resumen con los metodos que se deben realizar
 
     public void resumen() {
